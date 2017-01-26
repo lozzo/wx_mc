@@ -10,7 +10,6 @@ if sys.getdefaultencoding() != default_encoding:
     sys.setdefaultencoding(default_encoding)
 tl = Tulingbot()
 mc = MChandle()
-mc.log_read()
 
 class MyBot(WXBot):
 
