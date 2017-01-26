@@ -3,9 +3,14 @@
 from  wxbot import *
 from msghandle import *
 
+import sys
+default_encoding='utf-8'
+if sys.getdefaultencoding() != default_encoding:
+    reload(sys)
+    sys.setdefaultencoding(default_encoding)
 tl = Tulingbot()
 mc = MChandle()
-
+mc.log_read()
 
 class MyBot(WXBot):
 
