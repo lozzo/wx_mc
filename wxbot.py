@@ -18,6 +18,12 @@ from traceback import format_exc
 from requests.exceptions import ConnectionError, ReadTimeout
 import HTMLParser
 
+import sys
+default_encoding='utf-8'
+if sys.getdefaultencoding() != default_encoding:
+    reload(sys)
+    sys.setdefaultencoding(default_encoding)
+
 UNKONWN = 'unkonwn'
 SUCCESS = '200'
 SCANED = '201'

@@ -3,11 +3,17 @@
 from  wxbot import *
 from msghandle import *
 
+import sys
+default_encoding='utf-8'
+if sys.getdefaultencoding() != default_encoding:
+    reload(sys)
+    sys.setdefaultencoding(default_encoding)
+
 class MyBot(WXBot):
 
     def handle_msg_all(self,msg):
         tl = Tulingbot()
-        if msg['msg_type_id'] == 4 and msg['content']['type'] == 0:
+        if msg['msg_type_id'] == 4  ['content']['type'] == 0:
             self.send_msg_by_uid(tl.replay(
                                                     msg['content']['data'],
                                                     msg['user']['id']),

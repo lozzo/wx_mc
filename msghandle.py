@@ -1,14 +1,14 @@
 #coding=utf-8
+import requests
+import json
+import ConfigParser
+import os 
+
 import sys
 default_encoding='utf-8'
 if sys.getdefaultencoding() != default_encoding:
     reload(sys)
     sys.setdefaultencoding(default_encoding)
-
-import requests
-import json
-import ConfigParser
-import os 
 
 class Tulingbot():
     def __init__(self):
