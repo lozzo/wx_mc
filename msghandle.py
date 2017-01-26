@@ -100,8 +100,9 @@ class MChandle():
         os.system('screen -S {0} -p 0 -X stuff \"$(printf \"{1}\r\")\"'.format(self.screen,msg))
         after_command = self.log_lines()
         if before_command < after_command:
-            command_status = True  
-        return command_status 
+            return self.log_read(before_command,after_command)
+        else:
+            return '命令执行失败'
 
 
             
